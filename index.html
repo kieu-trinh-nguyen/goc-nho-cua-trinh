@@ -9,7 +9,221 @@
         :root {
             --bg-gradient: linear-gradient(135deg, #070b14 0%, #0f172a 100%);
             --card-bg: rgba(255, 255, 255, 0.03);
-            --card-border: rgba(255, 255, 255, 0.08);
+            --card-border: rgba(255, 255, 255, 0.08);<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghé Chơi Với Trinh | Sống Vững Vàng & An Tâm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+
+        body {
+            background-color: #f7f3f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            color: #4a423d;
+        }
+
+        .slide-container {
+            width: 100%;
+            max-width: 1100px; /* Chỉnh lại để xem mượt trên cả mobile và máy tính */
+            min-height: 700px;
+            background-color: #faf8f6;
+            background-image: 
+                radial-gradient(circle at 5% 5%, rgba(232, 211, 201, 0.4) 0%, transparent 40%),
+                radial-gradient(circle at 95% 95%, rgba(227, 181, 164, 0.3) 0%, transparent 40%);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+            border-radius: 32px;
+            position: relative;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* HEADER SECTION */
+        .header-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            flex-wrap: wrap; /* Tự động xuống dòng trên điện thoại */
+        }
+
+        .avatar-wrapper { position: relative; }
+        .avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #ffffff;
+            box-shadow: 0 15px 35px rgba(184, 150, 130, 0.15);
+        }
+
+        .verified-badge {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: #d4a373;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            border: 3px solid #faf8f6;
+        }
+
+        .profile-info { text-align: left; flex: 1; min-width: 300px; }
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: #3d3530;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .bio {
+            font-size: 17px;
+            line-height: 1.6;
+            color: #7a6e67;
+            font-weight: 300;
+            max-width: 600px;
+        }
+
+        /* SOCIAL ICONS DƯỚI BIO */
+        .social-mini-row {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .social-icon-link {
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon-link:hover { transform: translateY(-3px); }
+
+        .social-icon-link svg {
+            width: 28px;
+            height: 28px;
+            fill: #b89682; /* Màu nâu đồng sang trọng */
+        }
+
+        /* GRID HỆ THỐNG NÚT */
+        .content-area {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .link-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(227, 181, 164, 0.2);
+            padding: 25px;
+            border-radius: 20px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: all 0.4s ease;
+        }
+
+        .link-card:hover {
+            background: #ffffff;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(184, 150, 130, 0.12);
+            border-color: #e3b5a4;
+        }
+
+        .link-card.premium { background: #e8d3c9; border: none; }
+        .link-icon { font-size: 24px; color: #b89682; }
+        .link-title { font-size: 17px; font-weight: 600; color: #3d3530; }
+        .link-desc { font-size: 13px; color: #948881; line-height: 1.4; }
+
+        .footer-tag {
+            margin-top: auto;
+            padding-top: 40px;
+            font-size: 12px;
+            color: #c2b7b0;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Adjustment */
+        @media (max-width: 600px) {
+            .slide-container { padding: 30px; border-radius: 0; }
+            .header-section { text-align: center; justify-content: center; }
+            .profile-info { text-align: center; }
+            .social-mini-row { justify-content: center; }
+            .name { font-size: 36px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+    <div class="header-section">
+        <div class="avatar-wrapper">
+            <img src="avatar.jpg" alt="Góc Nhỏ Của Trinh" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=KT&background=e8d3c9&color=8c7365&size=200'">
+            <div class="verified-badge">✓</div>
+        </div>
+        <div class="profile-info">
+            <h1 class="name">Góc Nhỏ Của Trinh</h1>
+            <p class="bio">Chào bạn ghé chơi! Nơi Trinh rỉ rả cùng bạn về chuyện đời, chuyện tiền và những bí kíp nhỏ để tụi mình sống vững vàng hơn mỗi ngày.</p>
+            
+            <div class="social-mini-row">
+                <a href="https://www.facebook.com/profile.php?id=100077528742441" target="_blank" class="social-icon-link" title="Facebook">
+                    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/kieu.trin.nt/" target="_blank" class="social-icon-link" title="Instagram">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-area">
+        <a href="#" class="link-card premium">
+            <span class="link-icon">🎁</span>
+            <div class="link-title">Quà Tặng: Bảng Tính Túi Tiền</div>
+            <div class="link-desc">Bí kíp giữ tiền bền bỉ mỗi tháng, Trinh tặng bạn trải nghiệm hoàn toàn miễn phí.</div>
+        </a>
+
+        <a href="#" class="link-card">
+            <span class="link-icon">☕</span>
+            <div class="link-title">Góc Sách & Chuyện Đời</div>
+            <div class="link-desc">Những cuốn sách đã giúp Trinh tìm thấy sự an nhiên giữa cuộc sống bộn bề.</div>
+        </a>
+
+        <a href="#" class="link-card">
+            <span class="link-icon">🛡️</span>
+            <div class="link-title">Lá Chắn Bình Yên Gia Đình</div>
+            <div class="link-desc">Giải pháp phòng vệ tài chính thực tế, bảo vệ nụ cười cho những người thân yêu.</div>
+        </a>
+    </div>
+
+    <div class="footer-tag">© 2026 GÓC NHỎ CỦA TRINH • TƯ DUY SỐNG VỮNG VÀNG</div>
+</div>
+
+</body>
+</html>
             --glass-bg: rgba(15, 23, 42, 0.6);
             --text-main: #f8fafc;
             --text-sub: #94a3b8;
