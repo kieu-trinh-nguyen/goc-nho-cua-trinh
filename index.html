@@ -3,159 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Góc chia sẻ tư duy kỷ luật, quản lý tài chính tối giản và giải pháp phòng vệ rủi ro đời thường.">
-    <title>Góc Chia Sẻ & Di Sản Tài Chính Tối Giản</title>
+    <title>Góc Nhỏ Của Trinh | Quản Trị Khủng Hoảng</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0f172a;
-            --surface-color: #1e293b;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent-color: #3b82f6;
-            --accent-hover: #2563eb;
-            --border-radius: 12px;
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-sub: #cbd5e1;
+            --btn-accent: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+            --btn-hover: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%);
         }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
         body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background: var(--bg-gradient);
+            color: var(--text-main);
             min-height: 100vh;
-            padding: 20px;
-        }
-        .container {
-            width: 100%;
-            max-width: 480px;
-            text-align: center;
-        }
-        .profile {
-            margin-bottom: 32px;
-        }
-        .avatar-placeholder {
-            width: 96px;
-            height: 96px;
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-            color: white;
-            font-size: 32px;
-            font-weight: bold;
-            line-height: 96px;
-            border-radius: 50%;
-            margin: 0 auto 16px;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-        }
-        .name {
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-            margin-bottom: 8px;
-        }
-        .tagline {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.5;
-            padding: 0 20px;
-        }
-        .links-group {
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            margin-bottom: 40px;
-        }
-        .link-card {
-            background-color: var(--surface-color);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            padding: 18px 24px;
-            border-radius: var(--border-radius);
-            text-decoration: none;
-            color: var(--text-primary);
-            display: flex;
-            justify-content: space-between;
             align-items: center;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            padding: 40px 20px;
         }
-        .link-card:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent-color);
+        .profile-container {
+            text-align: center;
+            max-width: 480px;
+            width: 100%;
+            animation: fadeIn 0.8s ease-out;
         }
-        .link-content {
-            text-align: left;
+        .avatar-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
         }
-        .link-title {
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 4px;
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #3b82f6;
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
         }
-        .link-desc {
-            font-size: 12px;
-            color: var(--text-secondary);
+        .verified-badge {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background: #10b981;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            border: 2px solid #1e293b;
         }
-        .arrow-icon {
-            color: var(--accent-color);
-            font-weight: bold;
-            font-size: 18px;
+        .name { font-size: 24px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; }
+        .bio { font-size: 15px; color: var(--text-sub); line-height: 1.6; margin-bottom: 32px; padding: 0 10px; }
+        .links-container { display: flex; flex-direction: column; gap: 16px; }
+        .link-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+            padding: 16px 20px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .footer {
-            font-size: 11px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            border-top: 1px solid rgba(148, 163, 184, 0.1);
-            padding-top: 20px;
+        .link-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #3b82f6;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
         }
+        .link-item.highlight {
+            background: var(--btn-accent);
+            border: none;
+        }
+        .link-item.highlight:hover {
+            background: var(--btn-hover);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.5);
+        }
+        .link-icon { font-size: 24px; margin-right: 16px; }
+        .link-text-block { text-align: left; flex: 1; }
+        .link-title { font-weight: 600; font-size: 16px; margin-bottom: 4px; }
+        .link-desc { font-size: 13px; color: rgba(255,255,255,0.7); }
+        .footer { margin-top: 40px; font-size: 12px; color: #64748b; text-align: center; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Profile Section -->
-        <div class="profile">
-            <div class="avatar-placeholder">🌿</div>
-            <h1 class="name">Góc Tư Duy & Quản Trị Khủng Hoảng</h1>
-            <p class="tagline">Chia sẻ giải pháp kỷ luật thép, kiểm soát nợ vay và xây dựng lá chắn tài chính phòng thủ cho gia đình bình vị.</p>
-        </div>
-
-        <!-- Links Funnel Section -->
-        <div class="links-group">
-            <!-- Link 1: Công cụ tài chính (Mồi thu Lead) -->
-            <a href="https://zalo.me/g/YOUR_ZALO_GROUP_ID" target="_blank" rel="noopener" class="link-card">
-                <div class="link-content">
-                    <div class="link-title">📥 Tải Bộ File Excel Quản Lý Chi Tiêu & Xử Lý Nợ</div>
-                    <div class="link-desc">Bảng tính tự động thiết lập sẵn cấu trúc tối giản cho điện thoại.</div>
-                </div>
-                <div class="arrow-icon">→</div>
-            </a>
-
-            <!-- Link 2: Ngách Sách nói (Nuôi dưỡng giá trị) -->
-            <a href="https://YOUR_AFFILIATE_BOOK_LINK" target="_blank" rel="noopener" class="link-card">
-                <div class="link-content">
-                    <div class="link-title">🎧 Thư Viện Sách Nói Triết Lý & Kỹ Năng Tuổi Trung Niên</div>
-                    <div class="link-desc">Nghe tóm tắt các tác phẩm tinh hoa về sự kiên nhẫn và nội lực.</div>
-                </div>
-                <div class="arrow-icon">→</div>
-            </a>
-
-            <!-- Link 3: Ngách Bảo hiểm số (Chuyển đổi tạo tiền) -->
-            <a href="https://YOUR_AFFILIATE_INSURANCE_LINK" target="_blank" rel="noopener" class="link-card">
-                <div class="link-content">
-                    <div class="link-title">🛡️ Kích Hoạt Lá Chắn Dự Phòng Y Tế Gia Đình</div>
-                    <div class="link-desc">Giải pháp phòng vệ tài chính cấp bách khi đổ bệnh, phí chỉ từ 1.300đ/ngày.</div>
-                </div>
-                <div class="arrow-icon">→</div>
-            </a>
-        </div>
-
-        <!-- Compliance Footer -->
-        <footer class="footer">
-            <p>Trang thông tin tổng hợp và chia sẻ trải nghiệm cá nhân phi lợi nhuận.</p>
-            <p>Khuyến cáo: Các liên kết trên có thể chứa mã tiếp thị liên kết (Affiliate). Chúng tôi nhận một khoản hoa hồng nhỏ từ nhà cung cấp nếu bạn đăng ký dịch vụ, điều này giúp duy trì hoạt động chia sẻ giá trị của cộng đồng mà không làm tăng bất kỳ khoản phí nào của bạn.</p>
-        </footer>
+<div class="profile-container">
+    <div class="avatar-wrapper">
+        <img src="avatar.jpg" alt="Profile Picture" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=Kiều+Trinh&background=3b82f6&color=fff&size=200'">
+        <div class="verified-badge">✓</div>
     </div>
+
+    <h1 class="name">Kiều Trinh - Quản Trị Rủi Ro</h1>
+    <p class="bio">Chia sẻ tư duy kỷ luật thép, kiểm soát nợ vay và xây dựng lá chắn tài chính phòng thủ cho gia đình bình vị.</p>
+
+    <div class="links-container">
+        <a href="#" class="link-item highlight">
+            <div class="link-icon">📊</div>
+            <div class="link-text-block">
+                <div class="link-title">Tải File Excel Quản Lý Chi Tiêu</div>
+                <div class="link-desc">Bảng tính tự động thiết lập sẵn (Miễn phí)</div>
+            </div>
+        </a>
+
+        <a href="#" class="link-item">
+            <div class="link-icon">🎧</div>
+            <div class="link-text-block">
+                <div class="link-title">Thư Viện Sách Nói Triết Lý</div>
+                <div class="link-desc">Tóm tắt các tác phẩm tinh hoa tuổi trung niên</div>
+            </div>
+        </a>
+
+        <a href="#" class="link-item">
+            <div class="link-icon">🛡️</div>
+            <div class="link-text-block">
+                <div class="link-title">Lá Chắn Dự Phòng Y Tế</div>
+                <div class="link-desc">Kích hoạt quỹ phòng vệ y tế gia đình</div>
+            </div>
+        </a>
+    </div>
+
+    <div class="footer">
+        © 2026 Góc Nhỏ Của Trinh. Mọi thông tin chia sẻ mang tính trải nghiệm cá nhân.
+    </div>
+</div>
 
 </body>
 </html>
