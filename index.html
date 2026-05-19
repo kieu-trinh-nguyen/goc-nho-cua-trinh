@@ -1,20 +1,133 @@
-<div class="hook-box">"Quản lý tiền không phải là ghi chép tằn tiện, mà là dùng công cụ thông minh để tiền tự sinh ra tiền..."</div>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghé Chơi Với Trinh | Sống Vững Vàng & An Tâm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfaf8; --white: #ffffff; --accent-rose: #eac8bc;
+            --text-main: #2d241f; --text-sub: #5c524d; --gold: #b08968;
+            --vip-gold: linear-gradient(135deg, #d4af37, #aa7c11);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+        body { background-color: var(--bg-color); font-family: 'Quicksand', sans-serif; color: var(--text-main); display: flex; justify-content: center; padding: 40px 20px; }
+        .container { width: 100%; max-width: 520px; animation: fadeInUp 1s ease-out; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .avatar-wrapper { position: relative; display: inline-block; margin-bottom: 25px; }
+        .avatar { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 8px solid var(--white); box-shadow: 0 20px 40px rgba(184, 150, 130, 0.25); }
+        .badge { position: absolute; bottom: 15px; right: 15px; background: #10b981; color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 4px solid var(--white); font-size: 18px; }
+        .name { font-family: 'Playfair Display', serif; font-size: 40px; font-style: italic; color: var(--text-main); margin-bottom: 12px; }
+        .bio { font-size: 17px; color: var(--text-sub); max-width: 450px; margin: 0 auto; line-height: 1.6;}
+        
+        /* KHU VỰC ĐĂNG KÝ HỘI VIÊN VIP (THU TIỀN THÁNG) */
+        .vip-card {
+            background: var(--vip-gold);
+            padding: 2px; /* Viền gradient */
+            border-radius: 20px;
+            margin-bottom: 35px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            text-decoration: none;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .vip-card:hover { transform: translateY(-5px); }
+        .vip-inner {
+            background: #fffdf5;
+            padding: 20px 25px;
+            border-radius: 18px;
+            text-align: left;
+        }
+        .vip-title { color: #aa7c11; font-weight: 700; font-size: 19px; display: flex; align-items: center; gap: 10px; margin-bottom: 5px;}
+        .vip-desc { color: #5c524d; font-size: 14px; margin-bottom: 15px;}
+        .vip-btn {
+            background: var(--vip-gold);
+            color: white; font-weight: 700; text-align: center; padding: 12px;
+            border-radius: 12px; display: block; text-decoration: none;
+        }
+
+        /* ACCORDION CŨ CHO AFFILIATE */
+        .hook-box { text-align: left; font-size: 15px; font-style: italic; color: #8c7e74; background: #fff5f0; border-left: 4px solid var(--accent-rose); padding: 15px 20px; margin-bottom: 10px; border-radius: 0 15px 15px 0; }
+        .accordion { margin-bottom: 25px; }
+        .acc-btn { background: var(--white); border: 2px solid rgba(234, 200, 188, 0.3); padding: 22px 25px; border-radius: 20px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: 0.3s; }
+        .acc-btn:hover { border-color: var(--accent-rose); box-shadow: 0 12px 25px rgba(184, 150, 130, 0.15); }
+        .acc-title { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 15px; }
+        .acc-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0 15px; }
+        .acc-content.active { max-height: 600px; padding: 20px 15px 10px; }
+        .sub-link { display: flex; align-items: center; gap: 12px; padding: 15px; text-decoration: none; color: var(--text-sub); background: white; border-radius: 15px; margin-bottom: 10px; border: 1px solid #f0f0f0; font-weight: 600; transition: 0.2s; }
+        .sub-link:hover { background: var(--accent-rose); color: var(--text-main); padding-left: 20px; }
+        .footer { margin-top: 60px; font-size: 12px; color: #b89682; letter-spacing: 2px; text-transform: uppercase; text-align: center;}
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="avatar-wrapper">
+            <img src="avatar.jpg" alt="Góc Nhỏ Của Trinh" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=KT&background=eac8bc&color=2d241f&size=200'">
+            <div class="badge">✓</div>
+        </div>
+        <h1 class="name">Góc Nhỏ Của Trinh</h1>
+        <p class="bio">Rỉ rả chuyện đời, chuyện tiền và những bí kíp để tụi mình cùng sống vững vàng, an tâm hơn mỗi ngày.</p>
+    </div>
+
+    <a href="LINK_DANG_KY_THANH_VIEN_FANPAGE_CUA_ANH" class="vip-card" target="_blank">
+        <div class="vip-inner">
+            <div class="vip-title">👑 Góc Kín Của Trinh (VIP)</div>
+            <div class="vip-desc">Tham gia Hội viên để nghe Full Audio tâm sự đêm khuya mỗi tuần, nhận tài liệu đầu tư chuyên sâu và trò chuyện riêng tư cùng Trinh.</div>
+            <div class="vip-btn">Đăng ký Hội viên ủng hộ Trinh</div>
+        </div>
+    </a>
+
+    <div class="hook-box">"Dùng công cụ thông minh để tiền tự sinh ra tiền..."</div>
     <div class="accordion">
         <div class="acc-btn" onclick="toggle(this)">
-            <span class="acc-title">🎁 Công Cụ Giữ Tiền Thông Minh</span>
+            <span class="acc-title">🎁 Công Cụ Giữ Tiền & Sinh Lời</span>
             <span class="icon">▼</span>
         </div>
         <div class="acc-content">
-            <a href="LINK_AFFILIATE_CAKE_CỦA_ANH" class="sub-link" style="border: 2px solid #eac8bc; background: #fff5f0;" target="_blank">
-                📱 App Cake: Lập quỹ dự phòng cá nhân sinh lời tự động (Nên dùng)
-            </a>
-            
-            <a href="LINK_FILE_EXCEL_CỦA_ANH" class="sub-link" target="_blank">
-                📊 Tải File Excel: Bảng chia 6 chiếc hũ tài chính
-            </a>
-            
-            <a href="https://cake.vn/tin-tuc/tai-chinh/bang-chi-tieu-gia-dinh-hang-thang" class="sub-link" target="_blank">
-                📖 Đọc thêm: Bí quyết chia ngân sách gia đình 50/30/20
-            </a>
+            <a href="LINK_AFFILIATE_CAKE" class="sub-link" style="border: 2px solid #eac8bc; background: #fff5f0;" target="_blank">📱 App Cake: Quỹ tự do sinh lời tự động</a>
+            <a href="LINK_FILE_EXCEL" class="sub-link" target="_blank">📊 Tải Excel: Bảng chia 6 chiếc hũ tài chính</a>
         </div>
     </div>
+
+    <div class="hook-box">"Đàn ông ở giữa Tiền và Tình, làm sao để vẹn toàn?"</div>
+    <div class="accordion">
+        <div class="acc-btn" onclick="toggle(this)">
+            <span class="acc-title">🎙️ Podcast Tâm Sự Đêm Khuya</span>
+            <span class="icon">▼</span>
+        </div>
+        <div class="acc-content">
+            <a href="LINK_VIDEO_AUDIO_TREN_FANPAGE" class="sub-link" style="background: #fdfdfd;" target="_blank">🎧 Nghe tập 1: Bản lĩnh đàn ông trong phòng ngủ</a>
+            <a href="LINK_VIDEO_AUDIO_TREN_FANPAGE" class="sub-link" style="background: #fdfdfd;" target="_blank">🎧 Nghe tập 2: Vượt qua khủng hoảng tuổi 35</a>
+        </div>
+    </div>
+
+    <div class="hook-box">"Yêu thương là sự bảo vệ vững chắc nhất khi giông bão kéo đến."</div>
+    <div class="accordion">
+        <div class="acc-btn" onclick="toggle(this)">
+            <span class="acc-title">🛡️ Lá Chắn Bình Yên Gia Đình</span>
+            <span class="icon">▼</span>
+        </div>
+        <div class="acc-content">
+            <a href="LINK_AFF_BH_1" class="sub-link" target="_blank">🏥 Bảo hiểm y tế dự phòng (Chỉ 1.300đ/ngày)</a>
+            <a href="LINK_AFF_BH_2" class="sub-link" target="_blank">📋 Đăng ký nhận tư vấn lộ trình an tâm</a>
+        </div>
+    </div>
+
+    <div class="footer">© 2026 GÓC NHỎ CỦA TRINH • TƯ DUY SỐNG VỮNG VÀNG</div>
+</div>
+
+<script>
+    function toggle(btn) {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('.icon');
+        content.classList.toggle('active');
+        icon.innerText = content.classList.contains('active') ? '▲' : '▼';
+    }
+</script>
+
+</body>
+</html>
