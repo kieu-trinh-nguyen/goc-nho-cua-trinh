@@ -21,19 +21,18 @@
         .article-content { max-width: 680px; margin: 0 auto 5rem auto; padding: 0 1.5rem; font-size: 1.1rem; color: var(--text-main); }
         .article-content p { margin-bottom: 1.8rem; text-align: justify; }
         .article-content .highlight { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-style: italic; color: var(--accent-color); text-align: center; margin: 3rem 0; padding: 0 2rem; border-left: 3px solid var(--accent-color); }
-        .feature-box { background-color: #FFFFFF; border-left: 4px solid var(--accent-color); padding: 2rem; margin: 2.5rem 0; border-radius: 0 12px 12px 0; box-shadow: 0 10px 30px var(--shadow-soft); }
-        .feature-item { display: flex; align-items: flex-start; margin-bottom: 1.2rem; }
-        .feature-item:last-child { margin-bottom: 0; }
-        .feature-item i { color: var(--accent-color); font-size: 1.2rem; margin-top: 4px; margin-right: 1rem; }
-        .feature-item div h4 { font-family: 'Playfair Display', serif; color: #1A1918; font-size: 1.15rem; margin-bottom: 0.3rem; }
-        .feature-item div p { margin-bottom: 0; font-size: 0.95rem; color: var(--text-muted); }
-        .cta-container { text-align: center; margin-top: 4rem; padding: 3rem; background-color: var(--card-bg); border-radius: 20px; border: 1px solid rgba(189,122,93,0.1); box-shadow: 0 10px 30px var(--shadow-soft); }
-        .cta-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1rem; color: #1A1918; }
-        .cta-desc { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; }
-        .cta-button { display: inline-block; background-color: var(--accent-color); color: #FFF; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; letter-spacing: 1px; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(189,122,93,0.3); }
-        .cta-button:hover { background-color: var(--accent-hover); transform: translateY(-3px); box-shadow: 0 12px 25px rgba(189,122,93,0.4); }
+        
+        .solutions-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 3rem 0; }
+        .solution-box { background: #FFFFFF; border: 1px solid rgba(189,122,93,0.1); padding: 1.8rem; border-radius: 16px; box-shadow: 0 8px 24px var(--shadow-soft); display: flex; flex-direction: column; justify-content: space-between; }
+        .solution-box h3 { font-family: 'Playfair Display', serif; color: #1A1918; font-size: 1.25rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
+        .solution-box h3 i { color: var(--accent-color); font-size: 1.1rem; }
+        .solution-box p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem; text-align: justify; }
+        
+        .cta-mini-btn { display: block; text-align: center; background-color: var(--accent-color); color: #FFF; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.5px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(189,122,93,0.2); }
+        .cta-mini-btn:hover { background-color: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(189,122,93,0.3); }
+        
         footer { text-align: center; padding: 3rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid rgba(189,122,93,0.08); }
-        @media (max-width: 600px) { .article-title { font-size: 2rem; } .article-cover { height: 250px; border-radius: 0; } .feature-box { padding: 1.5rem; } }
+        @media (max-width: 600px) { .article-title { font-size: 2rem; } .article-cover { height: 250px; border-radius: 0; } .solutions-wrapper { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -49,54 +48,37 @@
     </div>
 
     <article class="article-content">
-        <p>Có một góc khuất mà những người đã có gia đình ít khi dám thổ lộ: <strong>Sự ngột ngạt khi mọi khoản chi tiêu đều phải nằm trên một tờ sao kê chung.</strong></p>
+        <p>Có một góc khuất mà những người đã có gia đình ít khi dám thổ lộ: <strong>Sự ngột ngạt khi mọi khoản chi tiêu lớn nhỏ đều nằm chung trên một tài khoản chung duy nhất dưới sự giám sát chặt chẽ.</strong></p>
         
-        <p>Chúng ta đi làm vất vả, nhưng đôi khi gửi biếu bố mẹ đẻ một chút tiền tiêu vặt, mua một món đồ công nghệ mình thích, hay bao đám bạn thân một chầu nhậu... lại mang cảm giác như đang lén lút. Phải dò xét thái độ của người kia, sợ những câu cằn nhằn vô tình làm tổn thương hòa khí gia đình.</p>
+        <p>Chúng ta đi làm vất vả, nhưng đôi khi muốn gửi biếu bố mẹ đẻ một chút tiền tiêu vặt, mua một món đồ công nghệ giải tỏa áp lực, hay bao đám bạn thân một chầu nhậu kỷ niệm... lại mang cảm giác đắn đo. Không phải vì chúng ta thiếu minh bạch, mà vì không muốn những khoản chi cá nhân nhỏ nhặt làm phát sinh những tranh luận hay giải trình không đáng có trong gia đình.</p>
 
         <div class="highlight">
-            "Sở hữu một quỹ tài chính độc lập không phải là sự giấu giếm hay ích kỷ. Đó là bệ phóng của sự tự do, giúp bạn giữ được bản lĩnh và sự bình an trong nội tâm."
+            "Sở hữu một tài khoản độc lập không phải là sự giấu giếm mang tính ích kỷ. Đó là giải pháp giúp mỗi người duy trì một khoảng không độc lập tối thiểu, tự chủ quyết định các nhu cầu cá nhân hợp lý để giữ sự thoải mái trong tâm lý."
         </div>
 
-        <p>Bất kỳ người trưởng thành nào cũng cần một "căn phòng riêng" về mặt tài chính. Một nơi không ai phán xét, không có những tin nhắn báo biến động số dư reo lên ở điện thoại của người khác. Bạn làm chủ dòng tiền, chủ động dự phòng cho những rủi ro bất trắc, và tự hào đứng vững trên đôi chân của mình.</p>
+        <p>Tùy theo nhu cầu thực tế của từng người, việc tối ưu hóa dòng tiền cá nhân có thể phân chia thành hai công cụ cơ bản dưới đây. Mỗi giải pháp có một ứng dụng thực tế riêng biệt:</p>
 
-        <p>Nhiều người hay hỏi Trinh: <em>"Vậy lập quỹ này ở đâu cho an toàn, bảo mật mà không rườm rà thủ tục?"</em> Trinh luôn khuyên mọi người nên dùng <strong>MBBank (Ngân hàng Quân Đội)</strong>. Không phải tự nhiên mà nó được xem là lựa chọn hàng đầu cho những ai cần sự vững chãi tuyệt đối.</p>
-
-        <div class="feature-box">
-            <div class="feature-item">
-                <i class="fas fa-shield-alt"></i>
-                <div>
-                    <h4>Bảo mật cấp độ Quân đội</h4>
-                    <p>Khung bảo mật sinh trắc học cao nhất, đảm bảo "góc riêng" của bạn không ai có thể chạm vào.</p>
-                </div>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-mobile-alt"></i>
-                <div>
-                    <h4>Riêng tư - Mở Online 100% trong 2 phút</h4>
-                    <p>Không cần ra quầy giao dịch. Bạn chỉ cần 2 phút thao tác trên điện thoại là đã sở hữu ngay một tài khoản độc lập.</p>
-                </div>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-gem"></i>
-                <div>
-                    <h4>Chọn số phong thủy miễn phí</h4>
-                    <p>MBBank cho phép bạn chọn số tài khoản trùng với số điện thoại, hoặc các con số tài lộc hoàn toàn miễn phí.</p>
-                </div>
-            </div>
-        </div>
-
-        <p>Chỉ mất 2 phút ngay lúc này để thiết lập một ranh giới an toàn cho chính mình. Lưu ý nhỏ để bảo mật tốt nhất: Bạn hãy bấm vào link, tải app và <strong>thực hiện định danh khuôn mặt (eKYC) liền mạch trong một lần</strong> để hoàn tất nhé.</p>
-
-        <div class="cta-container">
-            <h2 class="cta-title">Chìa khóa cho sự tự chủ của bạn</h2>
-            <p class="cta-desc">Trinh đã đặt sẵn đường link mã hóa an toàn nhất của MBBank tại đây. Cánh cửa tự do tài chính đang đợi bạn mở ra.</p>
+        <div class="solutions-wrapper">
             
-            <a href="https://go.isclix.com/deep_link/v5/6984632755771185129/5325601808419035241?sub4=oneatweb&url_enc=aHR0cHM6Ly9tb2JpbGUubWJiYW5rLmNvbS52bi9yZWZlcnJhbC9pbmRleC5odG1s" 
-               class="cta-button" 
-               target="_blank">
-               KHỞI TẠO KHOẢNG LẶNG RIÊNG
-            </a>
+            <div class="solution-box">
+                <div>
+                    <h3><i class="fas fa-shield-alt"></i> Tài khoản thanh toán cá nhân</h3>
+                    <p>Ứng dụng thực tế của <b>MBBank (Ngân hàng Quân đội)</b> là cung cấp một tài khoản số để giao dịch, cất giữ quỹ tiền mặt độc lập hoặc nhận các nguồn thu nhập phụ. Ưu điểm là miễn phí chuyển tiền trọn đời, không tốn phí duy trì tài khoản, đăng ký eKYC online nhanh chóng và hỗ trợ tùy chọn số tài khoản theo số điện thoại hoặc dãy số phong thủy mong muốn.</p>
+                </div>
+                <a href="https://go.isclix.com/deep_link/v5/6984632755771185129/5325601808419035241?sub4=oneatweb&url_enc=aHR0cHM6Ly9tb2JpbGUubWJiYW5rLmNvbS52bi9yZWZlcnJhbC9pbmRleC5odG1s" class="cta-mini-btn" target="_blank">MỞ TÀI KHOẢN MBBANK</a>
+            </div>
+            
+            <div class="solution-box">
+                <div>
+                    <h3><i class="fas fa-credit-card"></i> Công cụ chi tiêu & Hoàn tiền</h3>
+                    <p>Ứng dụng thực tế của dòng thẻ tín dụng online từ <b>VIB (Ngân hàng Quốc tế)</b> là cung cấp một hạn mức chi tiêu trước, trả tiền sau với chu kỳ miễn lãi lên đến 45-55 ngày. Thẻ có tính năng hoàn tiền (cashback) rõ ràng cho các hoạt động mua sắm, ăn uống hoặc thanh toán trực tuyến. <i>Lưu ý thực tế:</i> Đây là công cụ tối ưu dòng tiền rất tốt nếu bạn có kỷ luật tài chính, thanh toán dư nợ đúng hạn để tận dụng ưu đãi hoàn tiền và tránh phát sinh lãi suất chậm trả.</p>
+                </div>
+                <a href="https://go.isclix.com/deep_link/v5/6984632755771185129/6664405991260008150?sub4=oneatweb&url_enc=aHR0cHM6Ly9zaWV1bG9pc3VhdC5jYWlhcHAub25saW5l" class="cta-mini-btn" target="_blank">MỞ THẺ TÍN DỤNG VIB</a>
+            </div>
+            
         </div>
+
+        <p>Việc lựa chọn công cụ nào hoàn toàn phụ thuộc vào thói quen quản lý chi tiêu của bạn. Nếu có nhu cầu mở, bạn nên thực hiện các bước đăng ký và xác thực khuôn mặt liền mạch một lần để hệ thống xử lý hồ sơ tự động chính xác.</p>
     </article>
 
     <footer>&copy; 2026 Góc Nhỏ Của Trinh. Nội dung được viết từ sự thấu cảm.</footer>
