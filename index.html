@@ -3,131 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghé Chơi Với Trinh | Sống Vững Vàng & An Tâm</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Góc Nhỏ Của Trinh | Lời thì thầm tuổi trung niên</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #fdfaf8; --white: #ffffff; --accent-rose: #eac8bc;
-            --text-main: #2d241f; --text-sub: #5c524d; --gold: #b08968;
-            --vip-gold: linear-gradient(135deg, #d4af37, #aa7c11);
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
-        body { background-color: var(--bg-color); font-family: 'Quicksand', sans-serif; color: var(--text-main); display: flex; justify-content: center; padding: 40px 20px; }
-        .container { width: 100%; max-width: 520px; animation: fadeInUp 1s ease-out; }
-        .header { text-align: center; margin-bottom: 30px; }
-        .avatar-wrapper { position: relative; display: inline-block; margin-bottom: 25px; }
-        .avatar { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 8px solid var(--white); box-shadow: 0 20px 40px rgba(184, 150, 130, 0.25); }
-        .badge { position: absolute; bottom: 15px; right: 15px; background: #10b981; color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 4px solid var(--white); font-size: 18px; }
-        .name { font-family: 'Playfair Display', serif; font-size: 40px; font-style: italic; color: var(--text-main); margin-bottom: 12px; }
-        .bio { font-size: 17px; color: var(--text-sub); max-width: 450px; margin: 0 auto; line-height: 1.6;}
-        
-        /* KHU VỰC ĐĂNG KÝ HỘI VIÊN VIP (THU TIỀN THÁNG) */
-        .vip-card {
-            background: var(--vip-gold);
-            padding: 2px; /* Viền gradient */
-            border-radius: 20px;
-            margin-bottom: 35px;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-            text-decoration: none;
-            display: block;
-            transition: transform 0.3s;
-        }
-        .vip-card:hover { transform: translateY(-5px); }
-        .vip-inner {
-            background: #fffdf5;
-            padding: 20px 25px;
-            border-radius: 18px;
-            text-align: left;
-        }
-        .vip-title { color: #aa7c11; font-weight: 700; font-size: 19px; display: flex; align-items: center; gap: 10px; margin-bottom: 5px;}
-        .vip-desc { color: #5c524d; font-size: 14px; margin-bottom: 15px;}
-        .vip-btn {
-            background: var(--vip-gold);
-            color: white; font-weight: 700; text-align: center; padding: 12px;
-            border-radius: 12px; display: block; text-decoration: none;
+            --bg-color: #0D0D0D;
+            --card-bg: #141414;
+            --text-main: #F5F5F7;
+            --text-muted: #A1A1A6;
+            --accent-color: #C87A53; /* Màu Terracotta chuẩn Phú bà */
+            --accent-hover: #E09068;
         }
 
-        /* ACCORDION CŨ CHO AFFILIATE */
-        .hook-box { text-align: left; font-size: 15px; font-style: italic; color: #8c7e74; background: #fff5f0; border-left: 4px solid var(--accent-rose); padding: 15px 20px; margin-bottom: 10px; border-radius: 0 15px 15px 0; }
-        .accordion { margin-bottom: 25px; }
-        .acc-btn { background: var(--white); border: 2px solid rgba(234, 200, 188, 0.3); padding: 22px 25px; border-radius: 20px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: 0.3s; }
-        .acc-btn:hover { border-color: var(--accent-rose); box-shadow: 0 12px 25px rgba(184, 150, 130, 0.15); }
-        .acc-title { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 15px; }
-        .acc-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0 15px; }
-        .acc-content.active { max-height: 600px; padding: 20px 15px 10px; }
-        .sub-link { display: flex; align-items: center; gap: 12px; padding: 15px; text-decoration: none; color: var(--text-sub); background: white; border-radius: 15px; margin-bottom: 10px; border: 1px solid #f0f0f0; font-weight: 600; transition: 0.2s; }
-        .sub-link:hover { background: var(--accent-rose); color: var(--text-main); padding-left: 20px; }
-        .footer { margin-top: 60px; font-size: 12px; color: #b89682; letter-spacing: 2px; text-transform: uppercase; text-align: center;}
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(180deg, rgba(13,13,13,0.3) 0%, rgba(13,13,13,1) 100%), 
+                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80'); /* Thay link ảnh render Slay của Trinh vào đây */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .profile-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-color);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 24px rgba(200,122,83,0.2);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .bio-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        /* Container Phễu Giải Pháp */
+        .links-container {
+            max-width: 550px;
+            margin: -3rem auto 4rem auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Thẻ Giải Pháp - Card Affiliate */
+        .solution-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.03);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(200,122,83,0.3);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+
+        .solution-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .solution-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .solution-desc {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .solution-cta {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .solution-card:hover .solution-cta {
+            color: var(--accent-color);
+        }
+
+        .solution-cta span {
+            margin-left: 0.5rem;
+            transition: transform 0.3s;
+        }
+
+        .solution-card:hover .solution-cta span {
+            transform: translateX(5px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: rgba(255,255,255,0.15);
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.02);
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            .links-container { margin-top: -1.5rem; }
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <div class="avatar-wrapper">
-            <img src="avatar.jpg" alt="Góc Nhỏ Của Trinh" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=KT&background=eac8bc&color=2d241f&size=200'">
-            <div class="badge">✓</div>
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Nguyễn Kiều Trinh" class="profile-img">
+            <h1>Nguyễn Kiều Trinh</h1>
+            <p class="tagline">Trạm trú ẩn của những tâm hồn trưởng thành</p>
+            <p class="bio-text">Phú bà U40 thích lắng nghe góc khuất. Ngoài kia áp lực nặng vai quá, khép cánh cửa lại... vào góc nhỏ này nghe Trinh rỉ rả đôi lời xoa dịu anh, chị nhé.</p>
         </div>
-        <h1 class="name">Góc Nhỏ Của Trinh</h1>
-        <p class="bio">Rỉ rả chuyện đời, chuyện tiền và những bí kíp để tụi mình cùng sống vững vàng, an tâm hơn mỗi ngày.</p>
+    </section>
+
+    <div class="links-container">
+
+        <a href="YOUR_AFFILIATE_FONOS_LINK" class="solution-card" target="_blank">
+            <span class="solution-badge">Góc Tĩnh Lặng</span>
+            <h2 class="solution-title">Liều Thuốc Cho Những Đêm Mất Ngủ</h2>
+            <p class="solution-desc">Thành phố lên đèn nhưng lòng người tắt lửa. Những áp lực không thể nói cùng ai, những gánh nặng đè lên vai trụ cột. Thay vì đốt thuốc trong bóng tối, hãy cắm tai nghe vào, để những trang sách nói này ôm lấy tổn thương của anh.</p>
+            <div class="solution-cta">Nghe cùng Trinh <span>→</span></div>
+        </a>
+
+        <a href="YOUR_AFFILIATE_CAKE_LINK" class="solution-card" target="_blank">
+            <span class="solution-badge">Góc Khởi Sinh</span>
+            <h2 class="solution-title">Khoảng Lặng Tài Chính Bí Mật</h2>
+            <p class="solution-desc">Bản lĩnh của người trưởng thành không nằm ở việc khoe khoang, mà ở sự chuẩn bị thầm lặng. Một không gian quản lý dòng tiền độc lập, 1 chạm không phí ẩn, tách biệt hoàn toàn để lo những việc "không tên" mà không cần phải giải trình với thế giới.</p>
+            <div class="solution-cta">Mở lối tự do <span>→</span></div>
+        </a>
+
+        <a href="YOUR_AFFILIATE_INSURANCE_LINK" class="solution-card" target="_blank">
+            <span class="solution-badge">Góc Bản Lĩnh</span>
+            <h2 class="solution-title">Sự An Tâm Thầm Lặng Cho Người Thương</h2>
+            <p class="solution-desc">Đàn ông tuổi này sợ nhất điều gì? Không phải sợ khổ, mà sợ nếu một ngày mình mỏi gối chùn chân, người phụ nữ và con thơ phía sau phải chới với. Để lại một chiếc khiên bảo vệ thầm lặng chính là cái ôm bản lĩnh nhất anh dành cho gia đình.</p>
+            <div class="solution-cta">Nhận giải pháp bảo vệ <span>→</span></div>
+        </a>
+
+        <a href="YOUR_AFFILIATE_PODCAST_LINK" class="solution-card" target="_blank">
+            <span class="solution-badge">Góc Đặc Quyền</span>
+            <h2 class="solution-title">Phòng Kín Tuổi 35+: Chuyện Chưa Kể</h2>
+            <p class="solution-desc">Không gian đặc quyền nơi Trinh mổ xẻ những chủ đề "cấm kỵ": Khủng hoảng gối chăn nguội lạnh, góc khuất ngoại tình, sự cô độc của người làm sếp. Những điều không thể nói công khai trên Facebook, Trinh đợi anh ở phòng kín 1-1.</p>
+            <div class="solution-cta">Vào phòng kín cùng Trinh <span>→</span></div>
+        </a>
+
     </div>
 
-    <a href="LINK_DANG_KY_THANH_VIEN_FANPAGE_CUA_ANH" class="vip-card" target="_blank">
-        <div class="vip-inner">
-            <div class="vip-title">👑 Góc Kín Của Trinh (VIP)</div>
-            <div class="vip-desc">Tham gia Hội viên để nghe Full Audio tâm sự đêm khuya mỗi tuần, nhận tài liệu đầu tư chuyên sâu và trò chuyện riêng tư cùng Trinh.</div>
-            <div class="vip-btn">Đăng ký Hội viên ủng hộ Trinh</div>
-        </div>
-    </a>
-
-    <div class="hook-box">"Dùng công cụ thông minh để tiền tự sinh ra tiền..."</div>
-    <div class="accordion">
-        <div class="acc-btn" onclick="toggle(this)">
-            <span class="acc-title">🎁 Công Cụ Giữ Tiền & Sinh Lời</span>
-            <span class="icon">▼</span>
-        </div>
-        <div class="acc-content">
-            <a href="LINK_AFFILIATE_CAKE" class="sub-link" style="border: 2px solid #eac8bc; background: #fff5f0;" target="_blank">📱 App Cake: Quỹ tự do sinh lời tự động</a>
-            <a href="LINK_FILE_EXCEL" class="sub-link" target="_blank">📊 Tải Excel: Bảng chia 6 chiếc hũ tài chính</a>
-        </div>
-    </div>
-
-    <div class="hook-box">"Đàn ông ở giữa Tiền và Tình, làm sao để vẹn toàn?"</div>
-    <div class="accordion">
-        <div class="acc-btn" onclick="toggle(this)">
-            <span class="acc-title">🎙️ Podcast Tâm Sự Đêm Khuya</span>
-            <span class="icon">▼</span>
-        </div>
-        <div class="acc-content">
-            <a href="LINK_VIDEO_AUDIO_TREN_FANPAGE" class="sub-link" style="background: #fdfdfd;" target="_blank">🎧 Nghe tập 1: Bản lĩnh đàn ông trong phòng ngủ</a>
-            <a href="LINK_VIDEO_AUDIO_TREN_FANPAGE" class="sub-link" style="background: #fdfdfd;" target="_blank">🎧 Nghe tập 2: Vượt qua khủng hoảng tuổi 35</a>
-        </div>
-    </div>
-
-    <div class="hook-box">"Yêu thương là sự bảo vệ vững chắc nhất khi giông bão kéo đến."</div>
-    <div class="accordion">
-        <div class="acc-btn" onclick="toggle(this)">
-            <span class="acc-title">🛡️ Lá Chắn Bình Yên Gia Đình</span>
-            <span class="icon">▼</span>
-        </div>
-        <div class="acc-content">
-            <a href="LINK_AFF_BH_1" class="sub-link" target="_blank">🏥 Bảo hiểm y tế dự phòng (Chỉ 1.300đ/ngày)</a>
-            <a href="LINK_AFF_BH_2" class="sub-link" target="_blank">📋 Đăng ký nhận tư vấn lộ trình an tâm</a>
-        </div>
-    </div>
-
-    <div class="footer">© 2026 GÓC NHỎ CỦA TRINH • TƯ DUY SỐNG VỮNG VÀNG</div>
-</div>
-
-<script>
-    function toggle(btn) {
-        const content = btn.nextElementSibling;
-        const icon = btn.querySelector('.icon');
-        content.classList.toggle('active');
-        icon.innerText = content.classList.contains('active') ? '▲' : '▼';
-    }
-</script>
+    <footer>
+        &copy; 2026 Góc Nhỏ Của Trinh. Bản quyền hình ảnh và nội dung được quản trị bởi Hệ thống AI Agentic.
+    </footer>
 
 </body>
 </html>
