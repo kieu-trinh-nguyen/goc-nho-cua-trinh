@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Góc Nhỏ Của Trinh | Lời thì thầm tuổi trung niên</title>
+    <title>Góc Nhỏ Của Trinh | Đồng hành & Sẻ chia tâm sự</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --bg-color: #0D0D0D;
-            --card-bg: #141414;
-            --text-main: #F5F5F7;
-            --text-muted: #A1A1A6;
-            --accent-color: #C87A53; /* Màu Terracotta chuẩn Phú bà */
-            --accent-hover: #E09068;
+            --bg-color: #FAF8F5; /* Màu kem ấm tươi tắn, sang trọng không u tối */
+            --card-bg: #FFFFFF; /* Thẻ trắng tinh tế */
+            --text-main: #2A2826; /* Màu chữ nâu xám đậm mềm mại, có chiều sâu */
+            --text-muted: #6E6A66; /* Chữ phụ nhã nhặn */
+            --accent-color: #BD7A5D; /* Màu Terracotta thanh lịch */
+            --accent-hover: #A36246;
+            --shadow-soft: rgba(142, 137, 132, 0.08);
         }
 
         * {
@@ -29,127 +32,151 @@
             overflow-x: hidden;
         }
 
-        /* Hero Section */
+        /* Header / Hero Section */
         .hero {
             position: relative;
-            min-height: 70vh;
+            min-height: 55vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 2rem;
-            background: linear-gradient(180deg, rgba(13,13,13,0.3) 0%, rgba(13,13,13,1) 100%), 
-                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80'); /* Thay link ảnh render Slay của Trinh vào đây */
-            background-size: cover;
-            background-position: center;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
+            padding: 3rem 2rem 4rem 2rem;
+            background: radial-gradient(circle at top, #FFFDFB 0%, var(--bg-color) 100%);
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 600px;
+            max-width: 650px;
         }
 
         .profile-img {
-            width: 110px;
-            height: 110px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            border: 2px solid var(--accent-color);
+            border: 3px solid #FFFFFF;
             object-fit: cover;
             margin-bottom: 1.5rem;
-            box-shadow: 0 8px 24px rgba(200,122,83,0.2);
+            box-shadow: 0 10px 30px rgba(189,122,93,0.15);
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             font-weight: 600;
             letter-spacing: -0.5px;
             margin-bottom: 0.5rem;
+            color: #1A1918;
         }
 
         .tagline {
             font-family: 'Playfair Display', serif;
             font-style: italic;
             color: var(--accent-color);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
+            font-size: 1.15rem;
+            margin-bottom: 1.2rem;
+            font-weight: 400;
         }
 
         .bio-text {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            font-weight: 300;
+            font-size: 1rem;
+            font-weight: 400;
             margin-bottom: 2rem;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* Mạng xã hội liên kết */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-icon {
+            color: var(--text-muted);
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #FFFFFF;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px var(--shadow-soft);
+        }
+
+        .social-icon:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(189,122,93,0.12);
         }
 
         /* Container Phễu Giải Pháp */
         .links-container {
-            max-width: 550px;
-            margin: -3rem auto 4rem auto;
+            max-width: 600px;
+            margin: 0 auto 5rem auto;
             padding: 0 1.5rem;
-            position: relative;
-            z-index: 3;
         }
 
         /* Thẻ Giải Pháp - Card Affiliate */
         .solution-card {
             background-color: var(--card-bg);
-            border: 1px solid rgba(255,255,255,0.03);
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
+            border-radius: 20px;
+            padding: 1.8rem;
+            margin-bottom: 1.8rem;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             text-decoration: none;
             display: block;
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 10px 35px var(--shadow-soft);
+            border: 1px solid rgba(189,122,93,0.04);
         }
 
         .solution-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(200,122,83,0.3);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(142, 137, 132, 0.15);
+            border-color: rgba(189,122,93,0.15);
         }
 
         .solution-badge {
             display: inline-block;
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             color: var(--accent-color);
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
         }
 
         .solution-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--text-main);
-            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            color: #1A1918;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .solution-desc {
             color: var(--text-muted);
-            font-size: 0.88rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
+            font-size: 0.92rem;
+            font-weight: 400;
+            margin-bottom: 1.2rem;
+            text-align: justify;
         }
 
         .solution-cta {
             display: inline-flex;
             align-items: center;
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             color: var(--text-main);
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s;
         }
 
@@ -169,64 +196,70 @@
         /* Footer */
         footer {
             text-align: center;
-            padding: 2rem;
-            color: rgba(255,255,255,0.15);
-            font-size: 0.8rem;
-            border-top: 1px solid rgba(255,255,255,0.02);
+            padding: 3rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(189,122,93,0.08);
+            background-color: #FFFDFB;
         }
 
         @media (max-width: 480px) {
-            h1 { font-size: 1.8rem; }
-            .links-container { margin-top: -1.5rem; }
+            h1 { font-size: 2rem; }
+            .hero { padding-top: 2rem; }
         }
     </style>
 </head>
 <body>
 
     <section class="hero">
-        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Nguyễn Kiều Trinh" class="profile-img">
+            <img src="avatar.jpg" alt="Nguyễn Kiều Trinh" class="profile-img">
             <h1>Nguyễn Kiều Trinh</h1>
-            <p class="tagline">Trạm trú ẩn của những tâm hồn trưởng thành</p>
-            <p class="bio-text">Phú bà U40 thích lắng nghe góc khuất. Ngoài kia áp lực nặng vai quá, khép cánh cửa lại... vào góc nhỏ này nghe Trinh rỉ rả đôi lời xoa dịu anh, chị nhé.</p>
+            <p class="tagline">Nơi bình yên để thấu hiểu và sẻ chia</p>
+            <p class="bio-text">Chào bạn. Trinh ở đây không phải để giảng giải đạo lý, mà để cùng bạn nhìn sâu vào những góc khuất trong cuộc sống trưởng thành. Dù bạn là người đàn ông đang gồng gánh áp lực trụ cột, hay người phụ nữ đang lặng thầm vun vén gia đình; dù vướng mắc của bạn nằm ở sự nguội lạnh tình cảm, chuyện phòng the thầm kín hay những lo âu tài chính... mong rằng không gian này sẽ mang lại cho bạn sự thấu cảm, lòng tin và những giải pháp vững chãi nhất.</p>
+            
+            <div class="social-links">
+                <a href="YOUR_FACEBOOK_URL" class="social-icon" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="YOUR_INSTAGRAM_URL" class="social-icon" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="YOUR_THREADS_URL" class="social-icon" target="_blank" title="Threads"><i class="at">@</i></a>
+            </div>
         </div>
     </section>
 
     <div class="links-container">
 
         <a href="YOUR_AFFILIATE_FONOS_LINK" class="solution-card" target="_blank">
-            <span class="solution-badge">Góc Tĩnh Lặng</span>
-            <h2 class="solution-title">Liều Thuốc Cho Những Đêm Mất Ngủ</h2>
-            <p class="solution-desc">Thành phố lên đèn nhưng lòng người tắt lửa. Những áp lực không thể nói cùng ai, những gánh nặng đè lên vai trụ cột. Thay vì đốt thuốc trong bóng tối, hãy cắm tai nghe vào, để những trang sách nói này ôm lấy tổn thương của anh.</p>
-            <div class="solution-cta">Nghe cùng Trinh <span>→</span></div>
+            <span class="solution-badge">Góc Chữa Lành — Sách Nói & Podcast</span>
+            <h2 class="solution-title">Liều Thuốc Tĩnh Lặng Cho Tâm Trí <span><i class="fas fa-headphones"></i></span></h2>
+            <p class="solution-desc">Khi những bộn bề lo toan ngoài kia khiến cả đàn ông và phụ nữ đều cảm thấy kiệt sức, điều chúng ta cần là một khoảng lặng để xoa dịu nội tâm. Hãy để những trang sách nói và lời podcast thấu cảm này đồng hành cùng bạn qua những đêm trăn trở, tìm lại sự an yên trong tâm hồn.</p>
+            <div class="solution-cta">Bật nghe cùng Trinh <span>→</span></div>
         </a>
 
         <a href="YOUR_AFFILIATE_CAKE_LINK" class="solution-card" target="_blank">
-            <span class="solution-badge">Góc Khởi Sinh</span>
-            <h2 class="solution-title">Khoảng Lặng Tài Chính Bí Mật</h2>
-            <p class="solution-desc">Bản lĩnh của người trưởng thành không nằm ở việc khoe khoang, mà ở sự chuẩn bị thầm lặng. Một không gian quản lý dòng tiền độc lập, 1 chạm không phí ẩn, tách biệt hoàn toàn để lo những việc "không tên" mà không cần phải giải trình với thế giới.</p>
-            <div class="solution-cta">Mở lối tự do <span>→</span></div>
+            <span class="solution-badge">Góc Tự Chủ — Quản Lý Tài Chính</span>
+            <h2 class="solution-title">Nền Tảng Vững Chãi Cho Tương Lai <span><i class="fas fa-wallet"></i></span></h2>
+            <p class="solution-desc">Tình cảm cần bệ đỡ, và hạnh phúc gia đình luôn cần sự tự chủ. Một không gian độc lập, an toàn giúp cả hai giới hoạch định tài chính cá nhân và quỹ dự phòng thông minh, thao tác tinh gọn, không phí ẩn. Tích lũy vững vàng để tự tin làm chủ cuộc sống của chính mình.</p>
+            <div class="solution-cta">Trải nghiệm giải pháp <span>→</span></div>
         </a>
 
         <a href="YOUR_AFFILIATE_INSURANCE_LINK" class="solution-card" target="_blank">
-            <span class="solution-badge">Góc Bản Lĩnh</span>
-            <h2 class="solution-title">Sự An Tâm Thầm Lặng Cho Người Thương</h2>
-            <p class="solution-desc">Đàn ông tuổi này sợ nhất điều gì? Không phải sợ khổ, mà sợ nếu một ngày mình mỏi gối chùn chân, người phụ nữ và con thơ phía sau phải chới với. Để lại một chiếc khiên bảo vệ thầm lặng chính là cái ôm bản lĩnh nhất anh dành cho gia đình.</p>
+            <span class="solution-badge">Góc An Tâm — Bảo Vệ Gia Đình</span>
+            <h2 class="solution-title">Chiếc Khiên Trách Nhiệm Trước Giông Bão <span><i class="fas fa-shield-alt"></i></span></h2>
+            <p class="solution-desc">Một cuộc hôn nhân bền vững không chỉ xây bằng lời hứa, mà bằng sự bảo vệ thực tế trước rủi ro. Chuẩn bị một giải pháp bảo vệ sức khỏe và tài chính vững vàng cho người bạn đời và con thơ chính là cách thể hiện tình yêu bản lĩnh và đáng tin cậy nhất.</p>
             <div class="solution-cta">Nhận giải pháp bảo vệ <span>→</span></div>
         </a>
 
         <a href="YOUR_AFFILIATE_PODCAST_LINK" class="solution-card" target="_blank">
-            <span class="solution-badge">Góc Đặc Quyền</span>
-            <h2 class="solution-title">Phòng Kín Tuổi 35+: Chuyện Chưa Kể</h2>
-            <p class="solution-desc">Không gian đặc quyền nơi Trinh mổ xẻ những chủ đề "cấm kỵ": Khủng hoảng gối chăn nguội lạnh, góc khuất ngoại tình, sự cô độc của người làm sếp. Những điều không thể nói công khai trên Facebook, Trinh đợi anh ở phòng kín 1-1.</p>
-            <div class="solution-cta">Vào phòng kín cùng Trinh <span>→</span></div>
+            <span class="solution-badge">Tâm Sự Cùng Trinh — Đặc Quyền Riêng Tư</span>
+            <h2 class="solution-title">Phòng Kín Hôn Nhân & Chuyện Phòng The <span><i class="fas fa-lock"></i></span></h2>
+            <p class="solution-desc">Nơi Trinh bộc bạch những góc khuất sâu kín nhất mà không thể nói công khai trên mạng xã hội: Từ những rạn nứt nguội lạnh gối chăn, nghệ thuật hòa hợp phòng the, đến những khủng hoảng tâm lý của vợ chồng tuổi trưởng thành. Những sẻ chia đặc quyền mang tính tháo gỡ vướng mắc, chỉ dành riêng cho bạn tại đây.</p>
+            <div class="solution-cta">Bật mở không gian kín <span>→</span></div>
         </a>
 
     </div>
 
     <footer>
-        &copy; 2026 Góc Nhỏ Của Trinh. Bản quyền hình ảnh và nội dung được quản trị bởi Hệ thống AI Agentic.
+        &copy; 2026 Góc Nhỏ Của Trinh. Nội dung và hình ảnh được xây dựng dựa trên sự thấu cảm và lòng tin vững chãi.
     </footer>
 
 </body>
