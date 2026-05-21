@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Góc Chữa Lành | Góc Nhỏ Của Trinh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #FAF8F5;
+            --card-bg: #FFFFFF;
+            --text-main: #2A2826;
+            --text-muted: #6E6A66;
+            --accent-color: #BD7A5D;
+            --accent-hover: #A36246;
+            --shadow-soft: rgba(142, 137, 132, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Nút quay lại trang chủ */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .back-btn:hover {
+            color: var(--accent-color);
+        }
+
+        .back-btn i {
+            margin-right: 0.5rem;
+        }
+
+        /* Header Bài viết */
+        .article-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .article-category {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .article-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #1A1918;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Ảnh Cover Bài Viết */
+        .article-cover {
+            width: 100%;
+            max-width: 900px;
+            height: 400px;
+            margin: 0 auto 4rem auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px var(--shadow-soft);
+            display: block;
+        }
+
+        .article-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Nội dung bài viết */
+        .article-content {
+            max-width: 680px;
+            margin: 0 auto 5rem auto;
+            padding: 0 1.5rem;
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .article-content p {
+            margin-bottom: 1.8rem;
+            text-align: justify;
+        }
+
+        .article-content .highlight {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--accent-color);
+            text-align: center;
+            margin: 3rem 0;
+            padding: 0 2rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        /* Nút Call to Action (Affiliate) */
+        .cta-container {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem;
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid rgba(189,122,93,0.1);
+            box-shadow: 0 10px 30px var(--shadow-soft);
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1A1918;
+        }
+
+        .cta-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #FFF;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(189,122,93,0.3);
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(189,122,93,0.4);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(189,122,93,0.08);
+        }
+
+        @media (max-width: 600px) {
+            .article-title { font-size: 2rem; }
+            .article-cover { height: 250px; border-radius: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Quay lại Góc Nhỏ</a>
+
+    <header class="article-header">
+        <span class="article-category">Góc Chữa Lành</span>
+        <h1 class="article-title">Những đêm dài ta chọn cách im lặng...</h1>
+    </header>
+
+    <div class="article-cover">
+        <img src="avatar.jpg" alt="Góc chữa lành tâm trí">
+    </div>
+
+    <article class="article-content">
+        <p>Chào bạn, lại là Trinh đây.</p>
+        
+        <p>Trinh biết, có những ngày đi làm về, đỗ xe vào hầm rồi mà bạn chẳng muốn bước lên nhà ngay. Cứ ngồi thẫn thờ trong xe, tắt máy, bóng tối bao trùm. Hoặc những đêm tỉnh giấc giữa chừng, nhìn sang người thương đang ngủ say mà trong lòng cuộn lên những nỗi niềm không biết tỏ cùng ai.</p>
+
+        <p>Dù bạn là người đàn ông đang mệt nhoài gồng gánh áp lực trụ cột, hay người phụ nữ đang lặng thầm hy sinh thanh xuân để vun vén gia đình... chúng ta đều mang trên vai những vết thương tàng hình của tuổi trưởng thành.</p>
+
+        <div class="highlight">
+            "Chúng ta sợ nói ra sẽ thành kẻ yếu đuối, sợ phàn nàn sẽ làm người kia thêm gánh nặng. Thế là ta chọn cách im lặng, tự mình nuốt trôi những giông bão."
+        </div>
+
+        <p>Nhưng bạn à, tâm trí con người không phải là một chiếc hộp không đáy. Nếu cứ dồn nén mãi, sẽ có ngày nó vỡ vụn. Đừng để những suy nghĩ tiêu cực ấy gặm nhấm bạn thêm nữa. Những lúc chênh vênh nhất, thứ chúng ta cần đôi khi chỉ là một giọng nói cất lên, một câu chuyện thấu cảm thủ thỉ bên tai, nói rằng: <em>"Không sao đâu, bạn làm tốt lắm rồi"</em>.</p>
+
+        <p>Trinh đã từng vượt qua những giai đoạn khủng hoảng nhất bằng cách lắng nghe. Không phải nghe những lời khuyên sáo rỗng ngoài kia, mà nghe những trang sách nói, những podcast tâm lý thực sự có chiều sâu. Nó giúp Trinh nhìn thấu bản thân, gỡ bỏ niềm tin giới hạn và tìm lại sự bình yên ngay giữa bão tố.</p>
+
+        <div class="cta-container">
+            <h2 class="cta-title">Liều Thuốc Tĩnh Lặng Cho Đêm Nay</h2>
+            <p class="cta-desc">Trinh đã chọn lọc và gom nhặt những tựa sách nói, những câu chuyện chữa lành sâu sắc nhất. Cắm tai nghe vào, nhắm mắt lại, và để những thanh âm này ôm lấy tổn thương của bạn nhé.</p>
+            <a href="YOUR_AFFILIATE_FONOS_LINK" class="cta-button" target="_blank">BẬT NGHE CÙNG TRINH</a>
+        </div>
+    </article>
+
+    <footer>
+        &copy; 2026 Góc Nhỏ Của Trinh. Nội dung được viết từ sự thấu cảm.
+    </footer>
+
+</body>
+</html>
