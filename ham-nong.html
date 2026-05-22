@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Góc Hâm Nóng - Bí Quyết Yêu Lại Từ Đầu</title>
+    <title>Góc Hâm Nóng - Bí Quyết Yêu Lại Từ Đầu | Góc Nhỏ Của Trinh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #8b1c31; /* Đỏ rượu vang sang trọng */
-            --secondary-color: #d4af37; /* Vàng ánh kim */
-            --bg-color: #faf8f5; /* Trắng kem ấm áp */
-            --text-color: #333333;
-            --light-text: #666666;
+            --primary-color: #8b1c31; 
+            --secondary-color: #BD7A5D; 
+            --bg-color: #FAF8F5; 
+            --text-color: #2A2826;
+            --light-text: #6E6A66;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.8;
@@ -25,18 +27,38 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 30px 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .back-link i {
+            margin-right: 8px;
+        }
+
+        .back-link:hover {
+            color: var(--primary-color);
         }
 
         /* Header Styles */
         .header {
             text-align: center;
-            padding: 40px 0 20px;
-            border-bottom: 2px solid var(--secondary-color);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(189,122,93,0.2);
             margin-bottom: 30px;
         }
 
         .header h1 {
+            font-family: 'Playfair Display', serif;
             color: var(--primary-color);
             font-size: 2.2rem;
             margin: 0 0 10px 0;
@@ -44,10 +66,11 @@
         }
 
         .header p {
+            font-family: 'Playfair Display', serif;
             color: var(--light-text);
             font-style: italic;
             margin: 0;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
         }
 
         /* Tab Navigation Styles */
@@ -66,19 +89,20 @@
             padding: 12px 24px;
             border-radius: 30px;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             transition: all 0.3s ease;
         }
 
         .tab-btn:hover {
-            background-color: rgba(139, 28, 49, 0.1);
+            background-color: rgba(139, 28, 49, 0.05);
         }
 
         .tab-btn.active {
             background-color: var(--primary-color);
             color: white;
-            box-shadow: 0 4px 10px rgba(139, 28, 49, 0.3);
+            box-shadow: 0 6px 15px rgba(139, 28, 49, 0.2);
         }
 
         /* Content Styles */
@@ -86,9 +110,10 @@
             display: none;
             background: white;
             padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            animation: fadeIn 0.5s ease;
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(142, 137, 132, 0.08);
+            animation: fadeIn 0.4s ease;
+            border: 1px solid rgba(189,122,93,0.04);
         }
 
         .tab-content.active {
@@ -96,30 +121,32 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .intro-box {
-            background-color: #fff9f9;
+            background-color: #FFFDFB;
             border-left: 4px solid var(--secondary-color);
             padding: 15px 20px;
             font-style: italic;
             color: var(--primary-color);
             margin-bottom: 25px;
             border-radius: 0 10px 10px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
         }
 
         p {
             margin-bottom: 20px;
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             text-align: justify;
         }
 
         /* Affiliate Link Styles */
         .aff-link {
             color: var(--primary-color);
-            font-weight: 700;
+            font-weight: 600;
             text-decoration: none;
             border-bottom: 1px dashed var(--primary-color);
             transition: all 0.2s ease;
@@ -131,7 +158,6 @@
             border-bottom: 1px solid var(--secondary-color);
         }
 
-        /* Responsive */
         @media (max-width: 600px) {
             .tab-btn {
                 width: 100%;
@@ -149,15 +175,17 @@
 <body>
 
 <div class="container">
+    <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Quay lại Góc Nhỏ Của Trinh</a>
+
     <div class="header">
         <h1>Góc Hâm Nóng</h1>
         <p>Thắp lại ngọn lửa cuồng nhiệt như thuở ban đầu</p>
     </div>
 
     <div class="tabs">
-        <button class="tab-btn active" onclick="openTab('tab1')">Gợi Ý Tặng Ông Xã</button>
-        <button class="tab-btn" onclick="openTab('tab2')">Chiêu Hay Cho Bà Xã</button>
-        <button class="tab-btn" onclick="openTab('tab3')">Đưa Nhau Đi Trốn</button>
+        <button class="tab-btn active" onclick="openTab('tab1')">Mách Nhỏ Cho Các Bà Vợ</button>
+        <button class="tab-btn" onclick="openTab('tab2')">Chiêu Hay Cho Các Ông Chồng</button>
+        <button class="tab-btn" onclick="openTab('tab3')">Đưa Nhau Đi Trốn...</button>
     </div>
 
     <div id="tab1" class="tab-content active">
@@ -196,25 +224,24 @@
         
         <p>Ngả lưng xuống giường, hãy rót hai ly <strong>rượu mơ chua ngọt</strong>. Vị men trái cây êm ái sẽ không làm bạn say xỉn, mà chỉ đủ làm đôi má ửng hồng. Lúc này, để nụ hôn thêm phần táo bạo, hãy dùng <a href="https://s.shopee.vn/9ALfMRW0gl" class="aff-link" target="_blank">chút the mát bùng nổ nơi đầu môi</a>. Hơi thở thơm tho quyện cùng men rượu lâng lâng sẽ khiến ngọn lửa rạo rực bốc lên tức thì.</p>
         
-        <p>Khi khoảng cách đã thu hẹp lại, hãy bảo đối phương nằm úp xuống và dùng <a href="https://s.shopee.vn/809hyIaS3Y" class="aff-link" target="_blank">những giọt tinh dầu trơn mướt mơn trớn</a> dọc theo sống lưng. Bàn tay chạm đến đâu, mọi mệt mỏi tan biến đến đó, nhường chỗ cho sự đê mê. Và khi cảm xúc đã dâng trào đến đỉnh điểm, đừng quên lấy ra chiếc <a href="https://s.shopee.vn/8AT8AbZoib" class="aff-link" target="_blank">bảo bối vô hình xóa bỏ mọi rào cản</a> đã giấu sẵn dưới gối. Ở tuổi này, sự thăng hoa tuyệt đích là khi không còn phải vướng bận âu lo, tâm lý được thả lỏng hoàn toàn. Đêm nay, kịch bản là do hai bạn tự viết lại!</p>
+        <p>Khi khoảng cách đã thu hẹp lại, hãy bảo đối phương nằm úp xuống và dùng <a href="https://s.shopee.vn/809hyIaS3Y" class="aff-link" target="_blank">những giọt tinh dầu trơn mướt mơn trớn</a> dọc theo sống lưng. Bàn tay chạm đến đâu, mọi mệt mỏi tan biến đến đó, nhường chỗ cho sự đê mê.</p>
+        
+        <p>Và khi cảm xúc đã dâng trào đến đỉnh điểm, đừng quên lấy ra chiếc <a href="https://s.shopee.vn/8AT8AbZoib" class="aff-link" target="_blank">bảo bối vô hình xóa bỏ mọi rào cản</a> đã giấu sẵn dưới gối. Ở tuổi này, sự thăng hoa tuyệt đích là khi không còn phải vướng bận âu lo, tâm lý được thả lỏng hoàn toàn. Đêm nay, kịch bản là do hai bạn tự viết lại!</p>
     </div>
 </div>
 
 <script>
     function openTab(tabId) {
-        // Ẩn tất cả các nội dung tab
         var contents = document.getElementsByClassName("tab-content");
         for (var i = 0; i < contents.length; i++) {
             contents[i].classList.remove("active");
         }
 
-        // Bỏ active ở tất cả các nút
         var btns = document.getElementsByClassName("tab-btn");
         for (var i = 0; i < btns.length; i++) {
             btns[i].classList.remove("active");
         }
 
-        // Hiển thị tab được chọn và thêm class active cho nút đó
         document.getElementById(tabId).classList.add("active");
         event.currentTarget.classList.add("active");
     }
