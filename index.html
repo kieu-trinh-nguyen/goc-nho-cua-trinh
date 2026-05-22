@@ -3,221 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Góc Hâm Nóng - Bí Quyết Yêu Lại Từ Đầu</title>
+    <title>Góc Nhỏ Của Trinh | Đồng hành & Sẻ chia tâm sự</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary-color: #8b1c31; /* Đỏ rượu vang sang trọng */
-            --secondary-color: #d4af37; /* Vàng ánh kim */
-            --bg-color: #faf8f5; /* Trắng kem ấm áp */
-            --text-color: #333333;
-            --light-text: #666666;
+            --bg-color: #FAF8F5;
+            --card-bg: #FFFFFF;
+            --text-main: #2A2826;
+            --text-muted: #6E6A66;
+            --accent-color: #BD7A5D;
+            --accent-hover: #A36246;
+            --shadow-soft: rgba(142, 137, 132, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.8;
-            margin: 0;
-            padding: 0;
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Header Styles */
-        .header {
+        .hero {
+            position: relative;
+            min-height: 55vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 40px 0 20px;
-            border-bottom: 2px solid var(--secondary-color);
-            margin-bottom: 30px;
+            padding: 3rem 2rem 4rem 2rem;
+            background: radial-gradient(circle at top, #FFFDFB 0%, var(--bg-color) 100%);
         }
 
-        .header h1 {
-            color: var(--primary-color);
-            font-size: 2.2rem;
-            margin: 0 0 10px 0;
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #FFFFFF;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(189,122,93,0.15);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
             font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+            color: #1A1918;
         }
 
-        .header p {
-            color: var(--light-text);
+        .tagline {
+            font-family: 'Playfair Display', serif;
             font-style: italic;
-            margin: 0;
-            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-size: 1.15rem;
+            margin-bottom: 1.2rem;
+            font-weight: 400;
         }
 
-        /* Tab Navigation Styles */
-        .tabs {
+        .bio-text {
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .social-links {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
         }
 
-        .tab-btn {
-            background-color: transparent;
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 12px 24px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
+        .social-icon {
+            color: var(--text-muted);
+            font-size: 1.3rem;
             transition: all 0.3s ease;
+            text-decoration: none;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #FFFFFF;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px var(--shadow-soft);
         }
 
-        .tab-btn:hover {
-            background-color: rgba(139, 28, 49, 0.1);
+        .social-icon:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(189,122,93,0.12);
         }
 
-        .tab-btn.active {
-            background-color: var(--primary-color);
-            color: white;
-            box-shadow: 0 4px 10px rgba(139, 28, 49, 0.3);
+        .links-container {
+            max-width: 600px;
+            margin: 0 auto 5rem auto;
+            padding: 0 1.5rem;
         }
 
-        /* Content Styles */
-        .tab-content {
-            display: none;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            animation: fadeIn 0.5s ease;
-        }
-
-        .tab-content.active {
+        .solution-card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 1.8rem;
+            margin-bottom: 1.8rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
             display: block;
+            box-shadow: 0 10px 35px var(--shadow-soft);
+            border: 1px solid rgba(189,122,93,0.04);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(142, 137, 132, 0.15);
+            border-color: rgba(189,122,93,0.15);
         }
 
-        .intro-box {
-            background-color: #fff9f9;
-            border-left: 4px solid var(--secondary-color);
-            padding: 15px 20px;
-            font-style: italic;
-            color: var(--primary-color);
-            margin-bottom: 25px;
-            border-radius: 0 10px 10px 0;
+        .solution-badge {
+            display: inline-block;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--accent-color);
+            margin-bottom: 0.6rem;
+            font-weight: 600;
         }
 
-        p {
-            margin-bottom: 20px;
-            font-size: 1.05rem;
+        .solution-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #1A1918;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .solution-desc {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            font-weight: 400;
+            margin-bottom: 1.2rem;
             text-align: justify;
         }
 
-        /* Affiliate Link Styles */
-        .aff-link {
-            color: var(--primary-color);
-            font-weight: 700;
-            text-decoration: none;
-            border-bottom: 1px dashed var(--primary-color);
-            transition: all 0.2s ease;
-            position: relative;
+        .solution-cta {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.92rem;
+            color: var(--text-main);
+            font-weight: 600;
+            transition: color 0.3s;
         }
 
-        .aff-link:hover {
-            color: var(--secondary-color);
-            border-bottom: 1px solid var(--secondary-color);
+        .solution-card:hover .solution-cta {
+            color: var(--accent-color);
         }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            .tab-btn {
-                width: 100%;
-                margin-bottom: 5px;
-            }
-            .tab-content {
-                padding: 20px 15px;
-            }
-            .header h1 {
-                font-size: 1.8rem;
-            }
+        .solution-cta span {
+            margin-left: 0.5rem;
+            transition: transform 0.3s;
+        }
+
+        .solution-card:hover .solution-cta span {
+            transform: translateX(5px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(189,122,93,0.08);
+            background-color: #FFFDFB;
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            .hero { padding-top: 2rem; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <h1>Góc Hâm Nóng</h1>
-        <p>Thắp lại ngọn lửa cuồng nhiệt như thuở ban đầu</p>
-    </div>
-
-    <div class="tabs">
-        <button class="tab-btn active" onclick="openTab('tab1')">Mách Nhỏ Cho Các Bà Vợ</button>
-        <button class="tab-btn" onclick="openTab('tab2')">Chiêu Hay Cho Các Ông Chồng</button>
-        <button class="tab-btn" onclick="openTab('tab3')">Đưa Nha Đu Đi Trốn...</button>
-    </div>
-
-    <div id="tab1" class="tab-content active">
-        <div class="intro-box">
-            💡 Chỉ vài chiêu nhỏ để biến "người đàn ông bận rộn" thành "chàng trai si tình" của riêng bạn đêm nay...
+    <section class="hero">
+        <div class="hero-content">
+            <img src="avatar.jpg" alt="Nguyễn Kiều Trinh" class="profile-img">
+            <h1>Nguyễn Kiều Trinh</h1>
+            <p class="tagline">Nơi bình yên để thấu hiểu và sẻ chia</p>
+            <p class="bio-text">Chào bạn. Trinh ở đây không phải để giảng giải đạo lý, mà để cùng bạn nhìn sâu vào những góc khuất trong cuộc sống trưởng thành. Dù bạn là người đàn ông đang gồng gánh áp lực trụ cột, hay người phụ nữ đang lặng thầm vun vén gia đình; dù vướng mắc của bạn nằm ở sự nguội lạnh tình cảm, chuyện phòng the thầm kín hay những lo âu tài chính... mong rằng không gian này sẽ mang lại cho bạn sự thấu cảm, lòng tin và những giải pháp vững chãi nhất.</p>
+            
+            <div class="social-links">
+                <a href="https://www.facebook.com/nkt.kieu.trinh/" class="social-icon" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/kieu.trin.nt/" class="social-icon" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.threads.com/@kieu.trin.nt" class="social-icon" target="_blank" title="Threads"><i class="fa-solid fa-at"></i></a>
+            </div>
         </div>
-        <p>Đàn ông đôi khi buồn cười lắm, ra ngoài hô mưa gọi gió vậy thôi chứ về nhà mà mệt là cái mặt cứ xị ra y như đứa trẻ thiếu kẹo. Thay vì cằn nhằn "anh lại vứt tất bừa bãi", sao chị em mình không tung chiêu <strong>"lạt mềm buộc chặt"</strong> nhỉ?</p>
-        
-        <p>Tối nay, lúc lão vừa thả phịch người xuống sofa, khoan bắt đi tắm vội. Cứ ấn lão nằm úp xuống, lôi <a href="https://s.shopee.vn/7AaaOZZcDl" class="aff-link" target="_blank">cỗ máy thư giãn cơ bắp thu nhỏ</a> ra đi vài đường cơ bản dọc sống lưng. Các ông ấy đam mê máy móc công nghệ lắm, thấy vợ tâm lý vừa xoa bóp vừa thủ thỉ vài câu, đảm bảo bao nhiêu cái gai góc, bực dọc ngoài đường là rụng sạch, nằm ườn ra hưởng thụ liền.</p>
-        
-        <p>Đợi lão giãn gân cốt xong, mới lùa vào phòng tắm. Đàn ông chúa lười, hay xài ké đồ của vợ, nên mình phải tinh tế chuẩn bị sẵn một chai <a href="https://s.shopee.vn/6feJnebWEg" class="aff-link" target="_blank">lớp bọt mát lạnh làm sạch sâu</a>. Cái cảm giác sảng khoái đến từng ngóc ngách ấy dễ gây nghiện lắm. Rồi tiện tay, chị em mình "phi tang" luôn mấy cái quần lót cũ mèm mỏng dính của lão đi, thay bằng <a href="https://s.shopee.vn/6pxjzxastj" class="aff-link" target="_blank">sự ôm ấp mềm mại và thoáng khí</a> mới tinh. Mua đồ nhỏ cho chồng là một kiểu "đánh dấu chủ quyền" cực kỳ lợi hại đấy nhé!</p>
-        
-        <p>Khúc cuối mới là "chí mạng" này. Lúc lão vừa tắm xong, da còn đang ấm, hãy xịt cho chồng một chút <a href="https://s.shopee.vn/6L1TP2cmue" class="aff-link" target="_blank">làn hương nam tính vấn vương trên da</a>. Nó không gắt và nghiêm túc như nước hoa đi làm đâu. Mùi nó cứ thoang thoảng, ngai ngái mùi đàn ông pha chút gỗ trầm. Đêm xuống, ngửi cái mùi ấy quyện với da thịt, chị em chỉ có nước <strong>muốn rúc mãi vào cái hõm cổ ấy không buông</strong>. Đàn ông mà, được vợ cưng như thế thì có mà say điếu đổ, tự nguyện nộp lương không trượt đồng nào!</p>
+    </section>
+
+    <div class="links-container">
+
+        <a href="chua-lanh.html" class="solution-card">
+            <span class="solution-badge">Góc Chữa Lành — Sách Nói & Podcast</span>
+            <h2 class="solution-title">Liều Thuốc Tĩnh Lặng Cho Tâm Trí <span><i class="fas fa-headphones"></i></span></h2>
+            <p class="solution-desc">Khi những bộn bề lo toan ngoài kia khiến cả đàn ông và phụ nữ đều cảm thấy kiệt sức, điều chúng ta cần là một khoảng lặng để xoa dịu nội tâm. Hãy để những trang sách nói và lời podcast thấu cảm này đồng hành cùng bạn qua những đêm trăn trở, tìm lại sự an yên trong tâm hồn.</p>
+            <div class="solution-cta">Bật nghe cùng Trinh <span>→</span></div>
+        </a>
+
+        <a href="tu-chu.html" class="solution-card">
+            <span class="solution-badge">Góc Tự Chủ — Quản Lý Tài Chính</span>
+            <h2 class="solution-title">Nền Tảng Vững Chãi Cho Tương Lai <span><i class="fas fa-wallet"></i></span></h2>
+            <p class="solution-desc">Tình cảm cần bệ đỡ, và hạnh phúc gia đình luôn cần sự tự chủ. Một không gian độc lập, an toàn giúp cả hai giới hoạch định tài chính cá nhân và quỹ dự phòng thông minh, thao tác tinh gọn, không phí ẩn. Tích lũy vững vàng để tự tin làm chủ cuộc sống của chính mình.</p>
+            <div class="solution-cta">Trải nghiệm giải pháp <span>→</span></div>
+        </a>
+
+        <a href="ham-nong.html" class="solution-card">
+            <span class="solution-badge">Góc Hâm Nóng — Nghệ Thuật Yêu Lại Từ Đầu</span>
+            <h2 class="solution-title">Thắp Lại Ngọn Lửa Cuồng Nhiệt <span><i class="fas fa-fire-flame-curved"></i></span></h2>
+            <p class="solution-desc">Đôi khi chiếc giường quen thuộc lại trở thành nơi lạnh lẽo nhất nếu chúng ta quên mất cách chạm vào nhau. Hãy để Trinh mách bạn những "vũ khí" bí mật và tinh tế nhất, giúp rũ bỏ mọi mệt mỏi thường nhật để cháy lại ngọn lửa khao khát như thuở ban đầu.</p>
+            <div class="solution-cta">Khám phá bí quyết <span>→</span></div>
+        </a>
+
+        <a href="https://www.facebook.com/becomesupporter/nkt.kieu.trinh" class="solution-card" target="_blank">
+            <span class="solution-badge">Tâm Sự Cùng Trinh — Đặc Quyền Riêng Tư</span>
+            <h2 class="solution-title">Phòng Kín Hôn Nhân & Chuyện Phòng The <span><i class="fas fa-lock"></i></span></h2>
+            <p class="solution-desc">Nơi Trinh bộc bạch những góc khuất sâu kín nhất mà không thể nói công khai trên mạng xã hội: Từ những rạn nứt nguội lạnh gối chăn, nghệ thuật hòa hợp phòng the, đến những khủng hoảng tâm lý của vợ chồng tuổi trưởng thành. Những sẻ chia đặc quyền mang tính tháo gỡ vướng mắc, chỉ dành riêng cho bạn tại đây.</p>
+            <div class="solution-cta">Đăng ký tham gia phòng kín <span>→</span></div>
+        </a>
+
     </div>
 
-    <div id="tab2" class="tab-content">
-        <div class="intro-box">
-            💡 Phụ nữ không khó hiểu như anh nghĩ. Cứ tinh tế chiều chuộng đúng "huyệt", vợ tự khắc dịu dàng và rực rỡ...
-        </div>
-        <p>Thấy vợ dạo này hay nhăn nhó, né tránh đụng chạm, các anh đừng vội tự ái. Thử tưởng tượng một ngày quay cuồng với công việc rồi tối về lại dọn dẹp, rửa bát, kèm con học xem? Phụ nữ thực ra siêu dễ dỗ, chỉ cần các anh <strong>"bắt đúng mạch"</strong>.</p>
-        
-        <p>"Khúc dạo đầu" đỉnh cao nhất của đàn ông không phải ở trên giường, mà là lúc xắn tay áo ở bồn rửa bát! Tối nay, hãy mạnh dạn tuyên bố: <i>"Vợ đi nghỉ đi, bát đĩa để anh lo!"</i>. Chỉ cần một câu ấy thôi, tảng đá trong lòng nàng đã vơi đi một nửa. Thừa thắng xông lên, lúc vợ đang tắm, các anh hãy âm thầm thay ngay chiếc ga giường cũ bằng <a href="https://s.shopee.vn/6VKtbLc9Zh" class="aff-link" target="_blank">dải lụa mát rượi ôm trọn giấc ngủ</a>. Phụ nữ ấy mà, cứ thấy giường êm, lụa mát trượt trên da là bao nhiêu bực dọc bỉm sữa tự nhiên bay biến hết.</p>
-        
-        <p>Chưa dừng lại ở đó, hãy đặt sẵn lên bàn trang điểm <a href="https://s.shopee.vn/5flmbofKGa" class="aff-link" target="_blank">những giọt tinh chất giữ lại thanh xuân</a>. Phụ nữ chúa sợ già! Tặng món này chứng tỏ anh chồng cực kỳ để tâm và xót xa cho nhan sắc của vợ. Nàng thoa kem đến đâu, thấy da mướt đến đấy, tự khắc trong lòng sẽ mềm nhũn ra vì cảm động.</p>
-        
-        <p>Và "cú chốt" nằm ở đây: Hãy chuẩn bị sẵn <a href="https://s.shopee.vn/5q5Co7egvd" class="aff-link" target="_blank">lớp tơ lụa mỏng manh buông lơi</a> kèm theo <a href="https://s.shopee.vn/5L8wDCgawY" class="aff-link" target="_blank">vài giọt hương bí ẩn đánh thức giác quan</a>. Khi rũ bỏ được bộ quần áo nhàu nhĩ ám mùi khói bếp, khoác lên dải lụa mướt mát ngát hương, cái "bản ngã đàn bà" quyến rũ sẽ lập tức thức tỉnh. Nàng thấy mình đẹp, thấy mình được chồng nâng niu, thì đêm nay... các anh cứ xác định là "mất ngủ" đi nhé!</p>
-    </div>
-
-    <div id="tab3" class="tab-content">
-        <div class="intro-box">
-            💡 Tạm gác lại deadline và chuyện bỉm sữa, mượn cớ để "hư" một chút và cháy lại ngọn lửa cuồng nhiệt như thuở mới yêu!
-        </div>
-        <p>Vợ chồng ở với nhau lâu, cái giường đôi khi lại biến thành... phòng họp để bàn chuyện tiền điện, hay nơi để lướt Tiktok tới khuya. Nếu thấy dạo này hai người cứ như <strong>"hai người anh em chung giường"</strong>, thì đã đến lúc phải lên đồ "đổi gió" rồi!</p>
-        
-        <p>Kế hoạch thế này: Lén gửi bọn trẻ con sang nhà nội/ngoại một đêm. Về nhà, khoan bật cái đèn tuýp chói lóa lên. Hãy thắp một <a href="https://s.shopee.vn/5VSMPVfxbb" class="aff-link" target="_blank">đốm lửa nhỏ tỏa hương gỗ ấm</a> ở góc phòng, rồi cùng tắm mát và khoác lên mình <a href="https://s.shopee.vn/AKXcAONYnY" class="aff-link" target="_blank">vạt áo hờ hững thắt nút lỏng lẻo</a>. Cái cảm giác lớp vải mềm mượt trượt trên da mang lại đúng cái "vibe" đi nghỉ dưỡng ở resort.</p>
-        
-        <p>Ngả lưng xuống giường, hãy rót hai ly <strong>rượu mơ chua ngọt</strong>. Vị men trái cây êm ái sẽ không làm bạn say xỉn, mà chỉ đủ làm đôi má ửng hồng. Lúc này, để nụ hôn thêm phần táo bạo, hãy dùng <a href="https://s.shopee.vn/9ALfMRW0gl" class="aff-link" target="_blank">chút the mát bùng nổ nơi đầu môi</a>. Hơi thở thơm tho quyện cùng men rượu lâng lâng sẽ khiến ngọn lửa rạo rực bốc lên tức thì.</p>
-        
-        <p>Khi khoảng cách đã thu hẹp lại, hãy bảo đối phương nằm úp xuống và dùng <a href="https://s.shopee.vn/809hyIaS3Y" class="aff-link" target="_blank">những giọt tinh dầu trơn mướt mơn trớn</a> dọc theo sống lưng. Bàn tay chạm đến đâu, mọi mệt mỏi tan biến đến đó, nhường chỗ cho sự đê mê.</p>
-        
-        <p>Và khi cảm xúc đã dâng trào đến đỉnh điểm, đừng quên lấy ra chiếc <a href="https://s.shopee.vn/8AT8AbZoib" class="aff-link" target="_blank">bảo bối vô hình xóa bỏ mọi rào cản</a> đã giấu sẵn dưới gối. Ở tuổi này, sự thăng hoa tuyệt đích là khi không còn phải vướng bận âu lo, tâm lý được thả lỏng hoàn toàn. Đêm nay, kịch bản là do hai bạn tự viết lại!</p>
-    </div>
-</div>
-
-<script>
-    function openTab(tabId) {
-        var contents = document.getElementsByClassName("tab-content");
-        for (var i = 0; i < contents.length; i++) {
-            contents[i].classList.remove("active");
-        }
-
-        var btns = document.getElementsByClassName("tab-btn");
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].classList.remove("active");
-        }
-
-        document.getElementById(tabId).classList.add("active");
-        event.currentTarget.classList.add("active");
-    }
-</script>
+    <footer>
+        &copy; 2026 Góc Nhỏ Của Trinh. Nội dung và hình ảnh được xây dựng dựa trên sự thấu cảm và lòng tin vững chãi.
+    </footer>
 
 </body>
 </html>
