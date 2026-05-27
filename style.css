@@ -1,0 +1,17 @@
+/* style.css - Dùng chung cho toàn bộ web */
+body { font-family: 'Segoe UI', Tahoma, Arial, sans-serif; line-height: 1.6; max-width: 600px; margin: auto; padding: 20px; background-color: #fcfaf8; color: #333; }
+
+/* Tiêu đề */
+h1, h2 { color: #5d4037; text-align: center; }
+
+/* Nút bấm CTA chuẩn (Dùng chung cho cả web) */
+.btn-cta { 
+    display: block; width: 90%; margin: 20px auto; padding: 18px; 
+    background-color: #5d4037; color: #fff; text-align: center; 
+    border-radius: 12px; text-decoration: none; font-weight: 700; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s; 
+}
+.btn-cta:hover { background-color: #3e2723; }
+
+/* Căn chỉnh hình ảnh cho đẹp */
+img { width: 100%; border-radius: 10px; margin-bottom: 20px; }
